@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SNOW ❄️</title>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+        background-color: #000;
+        color: #fff;
+      }
+
+      .snowflake {
+        position: absolute;
+        background-color: #fff;
+        height: 2px;
+        width: 2px;
+        animation: snowfall 5s linear infinite;
+      }
+
+      @keyframes snowfall {
+        0% {
+          transform: translateY(-100vh);
+        }
+        100% {
+          transform: translateY(100vh);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      function createSnowflake() {
+        const snowflake = document.createElement("div");
+        snowflake.classList.add("snowflake");
+        snowflake.style.left = `${Math.random() * 100}vw`;
+        document.body.appendChild(snowflake);
+      }
+
+      setInterval(createSnowflake, 100);
+    </script>
+  </body>
+</html>
